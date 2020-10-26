@@ -7,7 +7,6 @@ byte msg[3];
 RF24 radio(9, 10);
 const uint64_t pipe = 0xE8E8F0F0E1LL;
 int LED1 = 8;
-
 void setup(void)
 {
   Serial.begin(115200);
@@ -25,7 +24,7 @@ void loop(void)
   {
     radio.read(msg, 1);
     //Serial.println(msg[0]);
-    
+
     if (msg[0] == 11) {
       delay(20);
       Serial.println("LED is ON");
